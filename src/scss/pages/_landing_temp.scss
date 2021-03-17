@@ -1,0 +1,61 @@
+.body-landing-temporal {
+  @include flex(column, center, center, false);
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  padding: 24px 0;
+
+  overflow-y: auto;
+
+  background-image: url('./../images/landing/bkg.jpg'), linear-gradient(145deg, rgba(217,19,94,1) 0%, rgba(33,0,21,1) 27%, rgba(0,0,20,1) 40%, rgba(1,0,78,1) 67%, rgba(0,10,69,1) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  header {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 24px;
+
+    text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 100px;
+
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      @include ff-ombudsman;
+      @include title-xl;
+
+      margin-bottom: 20px;
+
+      color: $white;
+
+      @media (max-width: 480px) {
+        @include title-l;
+      }
+    }
+
+    h2 {
+      @include ff-cond;
+      @include title-m;
+
+      color: $white;
+
+      @media (max-width: 480px) {
+        @include title-s;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    justify-content: start;
+  }
+}

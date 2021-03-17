@@ -1,0 +1,114 @@
+@mixin ff-cond {
+  font-family: $cond;
+  font-style: normal;
+  font-weight: normal;
+}
+@mixin ff-mozza {
+  font-family: $mozza;
+  font-style: normal;
+  font-weight: normal;
+}
+@mixin ff-ombudsman {
+  font-family: $ombudsman;
+  font-style: normal;
+  font-weight: normal;
+}
+@mixin ff-opensans {
+  font-family: $opensans;
+  font-style: normal;
+  font-weight: normal;
+}
+@mixin ff-opensans-bold {
+  font-family: $opensans-bold;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@mixin title-xl {
+  font-size: $title-xl;
+  line-height: 60px;
+}
+@mixin title-l {
+  font-size: $title-l;
+  line-height: 48px;
+}
+@mixin title-m {
+  font-size: $title-m;
+  line-height: px;
+}
+@mixin title-s {
+  font-size: $title-s;
+  line-height: px;
+}
+@mixin title-xs {
+  font-size: $title-xs;
+  line-height: px;
+}
+
+@mixin body-xl {
+  font-size: $body-xl;
+  line-height: px;
+}
+@mixin body-l {
+  font-size: $body-l;
+  line-height: px;
+}
+@mixin body-m {
+  font-size: $body-m;
+  line-height: px;
+}
+@mixin body-s {
+  font-size: $body-s;
+  line-height: 18px;
+}
+@mixin body-xs {
+  font-size: $body-xs;
+  line-height: px;
+}
+
+@mixin anchor-1 {
+  font-size: $anchor-1;
+  line-height: px;
+}
+@mixin anchor-2 {
+  font-size: $anchor-2;
+  line-height: px;
+}
+
+@mixin flex($fd, $jc, $ai, $wrap) {
+  display: flex;
+  @if $fd == column {
+    flex-direction: column;
+  } @else if $fd == row{
+    flex-direction: row;
+  }
+  @if $jc == center {
+    justify-content: center;
+  } @else if $jc == start{
+    justify-content: flex-start;
+  } @else if $jc == end{
+    justify-content: flex-end;
+  } @else if $jc == between{
+    justify-content: space-between;
+  } @else if $jc == around{
+    justify-content: space-around;
+  }@else if $jc == evenly{
+    justify-content: space-evenly;
+  }@else if $jc == stretch{
+    justify-content: stretch;
+  }
+  @if $ai == center {
+    align-items: center;
+  } @else if $ai == start{
+    align-items: flex-start;
+  } @else if $ai == end{
+    align-items: flex-end;
+  } @else if $ai == stretch{
+    align-items: stretch;
+  }
+  @if $wrap {
+    flex-wrap: wrap;
+  } @else {
+    flex-wrap: nowrap;
+  }
+}

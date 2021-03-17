@@ -1,0 +1,20 @@
+/* Core variables and mixins */
+@import "variables.scss";
+@import "mixins.scss";
+
+/* Global CSS */
+@import "global.scss";
+
+/* Colors CSS */
+@import "colors.scss";
+
+/* Typography CSS */
+@import "typography.scss";
+
+/* Components */
+@import "components/overlay_darken";
+@import "components/avisos_legales";
+
+/* Pages */
+@import "pages/login";
+@import "pages/landing_temp";
