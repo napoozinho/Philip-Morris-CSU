@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box; }
 
-input {
+input, select {
   outline: none; }
 
 .btn {
@@ -176,3 +176,143 @@ input {
   @media (max-width: 480px) {
     .body-landing-temporal {
       justify-content: start; } }
+
+.body-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  padding: 0 16px;
+  background-image: url("./../images/landing/bkg.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .body-login .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%; }
+    .body-login .container section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      max-width: 600px;
+      width: 100%;
+      height: 80vh;
+      padding: 32px 24px;
+      box-shadow: 0px 0px 10px #015ec0;
+      background-color: white;
+      border-radius: 10px;
+      overflow-y: auto;
+      /* width */
+      /* Track */
+      /* Handle */
+      /* Handle on hover */ }
+      .body-login .container section::-webkit-scrollbar {
+        width: 20px; }
+      .body-login .container section::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: white; }
+      .body-login .container section::-webkit-scrollbar-thumb {
+        background: #3477be;
+        border-radius: 0 8px 8px 0; }
+      .body-login .container section::-webkit-scrollbar-thumb:hover {
+        background: #015ec0; }
+      .body-login .container section p {
+        width: 100%;
+        margin-bottom: 24px;
+        color: #015ec0;
+        font-family: "Opensans-bold";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px; }
+      .body-login .container section form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        width: 100%; }
+        .body-login .container section form .form-section {
+          width: 100%; }
+          .body-login .container section form .form-section.fullwidth {
+            grid-column: 1/3; }
+          .body-login .container section form .form-section label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 8px;
+            font-family: "Opensans";
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: black; }
+          .body-login .container section form .form-section input {
+            width: 100%;
+            padding: 8px 16px;
+            font-size: 14px;
+            line-height: 18px;
+            font-family: "Opensans";
+            font-style: normal;
+            font-weight: normal;
+            color: #015ec0;
+            border: 1px solid;
+            border-color: #3477be;
+            border-radius: 5px; }
+            .body-login .container section form .form-section input::placeholder {
+              color: #6992bd; }
+            .body-login .container section form .form-section input:focus {
+              box-shadow: 0px 0px 3px #015ec0;
+              border-color: #015ec0; }
+          .body-login .container section form .form-section select {
+            width: 100%;
+            padding: 8px 16px;
+            font-size: 14px;
+            line-height: 18px;
+            font-family: "Opensans";
+            font-style: normal;
+            font-weight: normal;
+            color: #015ec0;
+            border: 1px solid;
+            border-color: #015ec0;
+            border-radius: 5px; }
+            .body-login .container section form .form-section select::placeholder {
+              color: #6992bd; }
+            .body-login .container section form .form-section select:focus {
+              box-shadow: 0px 0px 3px #015ec0;
+              border-color: #015ec0; }
+          .body-login .container section form .form-section.checkbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: nowrap; }
+            .body-login .container section form .form-section.checkbox input[type='checkbox'] {
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              margin-top: 2px;
+              margin-right: 8px; }
+          .body-login .container section form .form-section button {
+            width: 100%;
+            color: white;
+            background-color: #015ec0; }
+          .body-login .container section form .form-section:last-child {
+            margin-top: 16px; }
+        @media (max-width: 767px) {
+          .body-login .container section form {
+            grid-template-columns: 1fr; }
+            .body-login .container section form .form-section.fullwidth {
+              grid-column: initial; } }

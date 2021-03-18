@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TomaDeDatos</title>
+  <link rel="stylesheet" href="../../src/css/style.css">
+</head>
+
+<body class="body-login">
+
+  <div class="overlay-darken"></div>
+
+  <nav class="top-navbar"></nav>
+
+  <div class="container">
+
+    <section>
+      <p>
+        Por favor completa el siguiente formulario con tus datos:
+      </p>
+
+      <form action="" method="POST">
+
+        <div class="form-section">
+          <label for="">Nombre</label>
+          <input type="text" placeholder="Nombre" name="nombre" id="nombre" required>
+        </div>
+
+        <div class="form-section">
+          <label for="">Apellido</label>
+          <input type="text" placeholder="Apellido" name="apellido" id="apellido" required>
+        </div>
+
+        <div class="form-section">
+          <label for="">Email</label>
+          <input type="email" placeholder="mail@mail.com" name="email_1" id="email_1" required>
+        </div>
+
+        <div class="form-section">
+          <label for="">Repetir email</label>
+          <input type="text" placeholder="mail@mail.com" name="email_2" id="email_2" required>
+        </div>
+
+        <div class="form-section fullwidth">
+          <label for="">Telefono celular</label>
+          <input type="tel" placeholder="Telefono celular" name="celular" id="celular" required>
+        </div>
+
+        <div class="form-section fullwidth">
+          <label for="">DNI</label>
+          <input type="text" placeholder="DNI" name="dni" id="dni" required>
+        </div>
+
+        <div class="form-section fullwidth">
+          <label for="">Provincia</label>
+          <select name="provincia" id="provincia" required>
+            <option value="0" selected disabled> Seleccionar provincia</option>
+            <option value="1">provincia 1</option>
+            <option value="2">provincia 2</option>
+            <option value="3">provincia 3</option>
+            <option value="4">provincia 4</option>
+            <option value="5">provincia 5</option>
+            <option value="6">provincia 6</option>
+          </select>
+        </div>
+
+        <div class="form-section fullwidth">
+          <label for="">EZD</label>
+          <select name="ezd" id="ezd" required>
+            <option value="0" selected disabled> Seleccionar EZD</option>
+            <option value="1">EZD 1</option>
+            <option value="2">EZD 2</option>
+            <option value="3">EZD 3</option>
+            <option value="4">EZD 4</option>
+            <option value="5">EZD 5</option>
+            <option value="6">EZD 6</option>
+          </select>
+        </div>
+
+        <div class="form-section checkbox fullwidth">
+          <input type="checkbox" id="promocion" value="">
+          <label for="promocion">Deseo recibir información por corrreo electrónico o/y sms sobre esta promoción.</label>
+        </div>
+
+        <div class="form-section fullwidth">
+          <button class="btn goopen" type="submit">REGISTRARME</button>
+        </div>
+      </form>
+    </section>
+
+  </div>
+
+</body>
+
+</html>
