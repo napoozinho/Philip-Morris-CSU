@@ -66,14 +66,24 @@ input, select {
 
 .legal-wrapper {
   position: absolute;
-  bottom: 9px;
+  bottom: 0;
   left: 0;
+  padding: 0 16px;
   width: 100%;
   font-family: "Opensans";
   font-style: normal;
   font-weight: normal; }
   .legal-wrapper .legal-block {
-    border-radius: 12px; }
+    border-radius: 12px 0 0 12px;
+    /* width */
+    /* Track */
+    /* Handle */ }
+    .legal-wrapper .legal-block::-webkit-scrollbar {
+      width: 5px; }
+    .legal-wrapper .legal-block::-webkit-scrollbar-track {
+      background: transparent; }
+    .legal-wrapper .legal-block::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.7); }
   .legal-wrapper .tab-content {
     overflow: auto;
     height: 80px;
@@ -435,6 +445,89 @@ input, select {
         .body-pregunta-2 .container header h2 {
           font-size: 24px;
           line-height: 31px; } }
+
+.body-reglas {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+  padding: 24px 0;
+  overflow-y: auto;
+  background-image: url("./../images/landing/bkg_2.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .body-reglas .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 0 16px; }
+    .body-reglas .container header {
+      width: 100%;
+      max-width: 700px;
+      margin: 60px 0;
+      padding-bottom: 160px;
+      text-align: center; }
+      .body-reglas .container header h1 {
+        font-family: "Ombudsman";
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 20px;
+        color: white; }
+      .body-reglas .container header h2 {
+        font-family: "Ombudsman";
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-size: 36px;
+        line-height: 46px;
+        color: #cd0f57; }
+      @media (max-width: 480px) {
+        .body-reglas .container header h1 {
+          font-size: 36px;
+          line-height: 46px; }
+        .body-reglas .container header h2 {
+          font-size: 24px;
+          line-height: 31px; } }
+      .body-reglas .container header .list-wrapper {
+        width: 100%;
+        margin-top: 40px;
+        padding: 36px 24px;
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 4px 4px 20px #cadfff3d;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Ombudsman";
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-size: 24px;
+        line-height: px;
+        text-align: left; }
+        .body-reglas .container header .list-wrapper ul li {
+          margin-bottom: 20px; }
+          .body-reglas .container header .list-wrapper ul li:last-child {
+            margin-bottom: 40px; }
+      .body-reglas .container header form {
+        margin-top: -26px; }
+        .body-reglas .container header form button {
+          background-color: #cd0f57;
+          color: white; }
 
 .body-registro {
   display: flex;

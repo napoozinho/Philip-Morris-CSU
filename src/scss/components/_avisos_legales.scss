@@ -1,14 +1,27 @@
 .legal-wrapper {
   position: absolute;
-  bottom: 9px;
+  bottom: 0;
   left: 0;
+  padding: 0 16px;
 
   width: 100%;
 
   @include ff-opensans;
   
   .legal-block {
-    border-radius: 12px;
+    border-radius: 12px 0 0 12px;
+    /* width */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.7);
+    }
   }
 
   .tab-content {

@@ -1,0 +1,103 @@
+.body-reglas {
+  @include flex(column, start, center, false);
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+
+  padding: 24px 0;
+
+  overflow-y: auto;
+
+  background-image: url('./../images/landing/bkg_2.jpg'), linear-gradient(145deg, rgba(217,19,94,1) 0%, rgba(33,0,21,1) 27%, rgba(0,0,20,1) 40%, rgba(1,0,78,1) 67%, rgba(0,10,69,1) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .container {
+    @include flex(column, start, center, false);
+    position: relative;
+
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+
+    padding: 0 16px;
+
+
+    header {
+      width: 100%;
+      max-width: 700px;
+
+      margin: 60px 0;
+      padding-bottom: 160px;
+
+      text-align: center;
+
+      h1 {
+        @include ff-ombudsman;
+        @include title-l;
+
+        margin-bottom: 20px;
+
+        color: $white;
+      }
+      h2 {
+        @include ff-ombudsman;
+        @include title-m;
+
+        color: $red-500;
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          @include title-m;
+        }
+        h2 {
+          @include title-s;
+        }
+      }
+
+
+      .list-wrapper {
+        width: 100%;
+
+        margin-top: 40px;
+        padding: 36px 24px;
+
+        background-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 4px 4px 20px #cadfff3d;
+
+        color: rgba(255, 255, 255, 0.8);
+        @include ff-ombudsman;
+        @include body-l;
+        text-align: left;
+
+        ul {
+          li {
+            margin-bottom: 20px;
+
+            &:last-child {
+              margin-bottom: 40px;
+            }
+          }
+        }
+      }
+
+
+      form {
+        margin-top: -26px;
+        button {
+          background-color: $red-500;
+          color: $white;
+        }
+      }
+    }
+
+    // FROM '_FORM_YES_NO.SCSS'
+    // .form-yes-no {}
+  }
+}
