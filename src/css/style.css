@@ -53,15 +53,16 @@ input, select {
 
 /* Components */
 .overlay-darken {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
   width: 100%;
   min-height: 100vh;
   max-height: 100%;
+  height: 100%;
   background-color: black;
-  opacity: 0.3; }
+  opacity: 0.4; }
 
 .legal-wrapper {
   position: absolute;
@@ -124,6 +125,92 @@ input, select {
         background-color: white;
         opacity: 0.3; }
 
+.form-yes-no {
+  width: 100%; }
+  .form-yes-no p {
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: "Mozza";
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: white; }
+  .form-yes-no .switch {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 200px;
+    height: 50px;
+    font-family: "Mozza";
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    font-size: 36px;
+    line-height: 46px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    transition: all 0.3s ease; }
+  .form-yes-no .switch span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(100deg) translate(-25%, -25%);
+    width: 20px;
+    height: 4px;
+    margin: -2px 0px 0px -4px;
+    opacity: 0;
+    background: #fff;
+    transition: all 0.3s ease; }
+    .form-yes-no .switch span.active {
+      opacity: 1;
+      transform: rotate(-45deg) translate(-25%, -25%); }
+  .form-yes-no .switch span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-top: -8px;
+    width: 4px;
+    height: 12px;
+    background: #fff;
+    transition: all 0.3s ease; }
+  .form-yes-no input[type=radio] {
+    display: none; }
+  .form-yes-no .switch label {
+    width: 100px;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 50px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.3s ease; }
+  .form-yes-no label[for=no] {
+    position: absolute;
+    right: 0px; }
+  .form-yes-no #yes:checked ~ .switch {
+    background: #3477be; }
+  .form-yes-no #no:checked ~ .switch {
+    background: #eb4f37; }
+  .form-yes-no #no:checked ~ .switch span {
+    background: #fff;
+    margin-left: -8px; }
+  .form-yes-no #no:checked ~ .switch span::after {
+    background: #fff;
+    height: 20px;
+    margin-top: -8px;
+    margin-left: 8px; }
+  .form-yes-no #yes:checked ~ .switch label[for=yes] {
+    color: #fff; }
+  .form-yes-no #no:checked ~ .switch label[for=no] {
+    color: #fff; }
+  .form-yes-no label[for=yes] {
+    position: absolute;
+    left: 0;
+    height: 50px; }
+
 /* Pages */
 .body-landing-temporal {
   display: flex;
@@ -136,7 +223,7 @@ input, select {
   height: 100vh;
   padding: 24px 0;
   overflow-y: auto;
-  background-image: url("./../images/landing/bkg.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
+  background-image: url("./../images/landing/bkg_1.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -154,6 +241,7 @@ input, select {
       font-family: "Ombudsman";
       font-style: normal;
       font-weight: normal;
+      letter-spacing: 0.05em;
       font-size: 60px;
       line-height: 60px;
       margin-bottom: 20px;
@@ -167,17 +255,173 @@ input, select {
       font-style: normal;
       font-weight: normal;
       font-size: 36px;
-      line-height: px;
+      line-height: 46px;
       color: white; }
       @media (max-width: 480px) {
         .body-landing-temporal header h2 {
           font-size: 24px;
-          line-height: px; } }
+          line-height: 31px; } }
   @media (max-width: 480px) {
     .body-landing-temporal {
       justify-content: start; } }
 
-.body-login {
+.body-landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 24px 0;
+  overflow-y: auto;
+  background-image: url("./../images/landing/bkg_1.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .body-landing header {
+    width: 100%;
+    max-width: 740px;
+    padding: 24px;
+    text-align: center; }
+    .body-landing header h1 {
+      font-family: "Ombudsman";
+      font-style: normal;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+      font-size: 60px;
+      line-height: 60px;
+      margin-bottom: 40px;
+      color: white; }
+      @media (max-width: 480px) {
+        .body-landing header h1 {
+          font-size: 36px;
+          line-height: 46px; } }
+    .body-landing header button {
+      background-color: #cd0f57;
+      color: white; }
+
+.body-pregunta-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 24px 0;
+  overflow: hidden;
+  background-image: url("./../images/landing/bkg_4.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .body-pregunta-1 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow: hidden;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 0 16px; }
+    .body-pregunta-1 .container header {
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 40px;
+      text-align: center; }
+      .body-pregunta-1 .container header h1 {
+        font-family: "Ombudsman";
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 20px;
+        color: white; }
+      .body-pregunta-1 .container header h2 {
+        font-family: "Ombudsman";
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-size: 36px;
+        line-height: 46px;
+        color: white; }
+      @media (max-width: 480px) {
+        .body-pregunta-1 .container header h1 {
+          font-size: 36px;
+          line-height: 46px; }
+        .body-pregunta-1 .container header h2 {
+          font-size: 24px;
+          line-height: 31px; } }
+
+.body-pregunta-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 24px 0;
+  overflow: hidden;
+  background-image: url("./../images/landing/bkg_3.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .body-pregunta-2 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+    overflow: hidden;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 0 16px; }
+    .body-pregunta-2 .container header {
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 40px;
+      text-align: center; }
+      .body-pregunta-2 .container header h1 {
+        font-family: "Ombudsman";
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-size: 48px;
+        line-height: 48px;
+        margin-bottom: 20px;
+        color: white; }
+      .body-pregunta-2 .container header h2 {
+        font-family: "Ombudsman";
+        font-style: normal;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-size: 36px;
+        line-height: 46px;
+        color: white; }
+      @media (max-width: 480px) {
+        .body-pregunta-2 .container header h1 {
+          font-size: 36px;
+          line-height: 46px; }
+        .body-pregunta-2 .container header h2 {
+          font-size: 24px;
+          line-height: 31px; } }
+
+.body-registro {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -187,12 +431,12 @@ input, select {
   min-height: 100vh;
   max-height: 100%;
   padding: 0 16px;
-  background-image: url("./../images/landing/bkg.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
+  background-image: url("./../images/landing/bkg_1.jpg"), linear-gradient(145deg, #d9135e 0%, #210015 27%, #000014 40%, #01004e 67%, #000a45 100%);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed; }
-  .body-login .container {
+  .body-registro .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -203,7 +447,7 @@ input, select {
     width: 100%;
     min-height: 100vh;
     max-height: 100%; }
-    .body-login .container section {
+    .body-registro .container section {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -211,8 +455,8 @@ input, select {
       flex-wrap: nowrap;
       max-width: 600px;
       width: 100%;
-      height: 80vh;
       padding: 32px 24px;
+      margin: 40px 0;
       box-shadow: 0px 0px 10px #015ec0;
       background-color: white;
       border-radius: 10px;
@@ -221,17 +465,17 @@ input, select {
       /* Track */
       /* Handle */
       /* Handle on hover */ }
-      .body-login .container section::-webkit-scrollbar {
+      .body-registro .container section::-webkit-scrollbar {
         width: 20px; }
-      .body-login .container section::-webkit-scrollbar-track {
+      .body-registro .container section::-webkit-scrollbar-track {
         border-radius: 10px;
         background: white; }
-      .body-login .container section::-webkit-scrollbar-thumb {
+      .body-registro .container section::-webkit-scrollbar-thumb {
         background: #3477be;
         border-radius: 0 8px 8px 0; }
-      .body-login .container section::-webkit-scrollbar-thumb:hover {
+      .body-registro .container section::-webkit-scrollbar-thumb:hover {
         background: #015ec0; }
-      .body-login .container section p {
+      .body-registro .container section p {
         width: 100%;
         margin-bottom: 24px;
         color: #015ec0;
@@ -240,16 +484,16 @@ input, select {
         font-weight: normal;
         font-size: 14px;
         line-height: 18px; }
-      .body-login .container section form {
+      .body-registro .container section form {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
         width: 100%; }
-        .body-login .container section form .form-section {
+        .body-registro .container section form .form-section {
           width: 100%; }
-          .body-login .container section form .form-section.fullwidth {
+          .body-registro .container section form .form-section.fullwidth {
             grid-column: 1/3; }
-          .body-login .container section form .form-section label {
+          .body-registro .container section form .form-section label {
             display: inline-block;
             width: 100%;
             margin-bottom: 8px;
@@ -259,7 +503,7 @@ input, select {
             font-size: 14px;
             line-height: 18px;
             color: black; }
-          .body-login .container section form .form-section input {
+          .body-registro .container section form .form-section input {
             width: 100%;
             padding: 8px 16px;
             font-size: 14px;
@@ -271,12 +515,15 @@ input, select {
             border: 1px solid;
             border-color: #3477be;
             border-radius: 5px; }
-            .body-login .container section form .form-section input::placeholder {
+            .body-registro .container section form .form-section input::placeholder {
               color: #6992bd; }
-            .body-login .container section form .form-section input:focus {
+            .body-registro .container section form .form-section input:focus {
               box-shadow: 0px 0px 3px #015ec0;
               border-color: #015ec0; }
-          .body-login .container section form .form-section select {
+            .body-registro .container section form .form-section input.error {
+              border-color: #cd0f57;
+              color: #cd0f57; }
+          .body-registro .container section form .form-section select {
             width: 100%;
             padding: 8px 16px;
             font-size: 14px;
@@ -288,31 +535,34 @@ input, select {
             border: 1px solid;
             border-color: #015ec0;
             border-radius: 5px; }
-            .body-login .container section form .form-section select::placeholder {
+            .body-registro .container section form .form-section select::placeholder {
               color: #6992bd; }
-            .body-login .container section form .form-section select:focus {
+            .body-registro .container section form .form-section select:focus {
               box-shadow: 0px 0px 3px #015ec0;
               border-color: #015ec0; }
-          .body-login .container section form .form-section.checkbox {
+            .body-registro .container section form .form-section select.error {
+              border-color: #cd0f57;
+              color: #cd0f57; }
+          .body-registro .container section form .form-section.checkbox {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             align-items: flex-start;
             flex-wrap: nowrap; }
-            .body-login .container section form .form-section.checkbox input[type='checkbox'] {
+            .body-registro .container section form .form-section.checkbox input[type='checkbox'] {
               display: inline-block;
               width: 16px;
               height: 16px;
               margin-top: 2px;
               margin-right: 8px; }
-          .body-login .container section form .form-section button {
+          .body-registro .container section form .form-section button {
             width: 100%;
             color: white;
             background-color: #015ec0; }
-          .body-login .container section form .form-section:last-child {
+          .body-registro .container section form .form-section:last-child {
             margin-top: 16px; }
         @media (max-width: 767px) {
-          .body-login .container section form {
+          .body-registro .container section form {
             grid-template-columns: 1fr; }
-            .body-login .container section form .form-section.fullwidth {
+            .body-registro .container section form .form-section.fullwidth {
               grid-column: initial; } }

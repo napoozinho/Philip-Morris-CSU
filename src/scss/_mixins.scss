@@ -7,11 +7,13 @@
   font-family: $mozza;
   font-style: normal;
   font-weight: normal;
+  letter-spacing: 0.05em;
 }
 @mixin ff-ombudsman {
   font-family: $ombudsman;
   font-style: normal;
   font-weight: normal;
+  letter-spacing: 0.05em;
 }
 @mixin ff-opensans {
   font-family: $opensans;
@@ -34,11 +36,11 @@
 }
 @mixin title-m {
   font-size: $title-m;
-  line-height: px;
+  line-height: 46px;
 }
 @mixin title-s {
   font-size: $title-s;
-  line-height: px;
+  line-height: 31px;
 }
 @mixin title-xs {
   font-size: $title-xs;

@@ -14,7 +14,11 @@
 /* Components */
 @import "components/overlay_darken";
 @import "components/avisos_legales";
+@import "components/form_yes_no";
 
 /* Pages */
 @import "pages/landing_temp";
+@import "pages/landing";
+@import "pages/pregunta_1";
+@import "pages/pregunta_2";
 @import "pages/toma_de_datos";

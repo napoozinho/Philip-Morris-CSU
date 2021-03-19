@@ -1,0 +1,109 @@
+.form-yes-no {
+  width: 100%;
+
+  p {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    @include ff-mozza;
+    @include title-l;
+    text-align: center;
+    color: $white;
+  }
+
+  .switch{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+    width: 200px;
+    height: 50px;
+
+    @include ff-mozza;
+    @include title-m;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  .switch span{
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: rotate(100deg) translate(-25%, -25%);
+
+    width: 20px;
+    height: 4px;
+
+    margin: -2px 0px 0px -4px;
+    
+    opacity: 0;
+    background: #fff;
+    transition: all 0.3s ease;
+
+    &.active {
+      opacity: 1;
+      transform: rotate(-45deg) translate(-25%, -25%);
+    }
+  }
+  .switch span::after{
+    content: "";
+    display: block;
+
+    position: absolute;
+
+    margin-top: -8px;
+    
+    width: 4px;
+    height: 12px;
+    
+    background: #fff;
+    transition: all 0.3s ease;
+  }
+  input[type=radio]{
+    display: none;
+  }
+  .switch label{
+    width: 100px;
+
+    color: rgba(0,0,0,0.5);
+    line-height: 50px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  label[for=no]{
+    position: absolute;
+    right: 0px;
+  }
+  #yes:checked ~ .switch{
+    background: $blue-400;
+  }
+  #no:checked ~ .switch{
+    background: #eb4f37;
+  }
+  #no:checked ~ .switch span{
+    background: #fff;
+    margin-left: -8px;
+  }
+  #no:checked ~ .switch span::after{
+    background: #fff;
+    height: 20px;
+    margin-top: -8px;
+    margin-left: 8px;
+  }
+  #yes:checked ~ .switch label[for=yes]{
+    color: #fff;
+  }
+  #no:checked ~ .switch label[for=no]{
+    color: #fff;
+  }
+  label[for=yes]{
+    position: absolute;
+    left: 0;
+    height:50px;
+  }
+}

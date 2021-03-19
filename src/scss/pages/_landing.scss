@@ -1,4 +1,4 @@
-.body-landing-temporal {
+.body-landing {
   @include flex(column, center, center, false);
   position: relative;
 
@@ -17,45 +17,28 @@
 
   header {
     width: 100%;
-    max-width: 500px;
+    max-width: 740px;
 
     padding: 24px;
 
     text-align: center;
 
-    img {
-      width: 100%;
-      max-width: 100px;
-
-      margin-bottom: 20px;
-    }
-
     h1 {
       @include ff-ombudsman;
       @include title-xl;
 
-      margin-bottom: 20px;
+      margin-bottom: 40px;
 
       color: $white;
 
       @media (max-width: 480px) {
-        @include title-l;
+        @include title-m;
       }
     }
 
-    h2 {
-      @include ff-cond;
-      @include title-m;
-
+    button {
+      background-color: $red-500;
       color: $white;
-
-      @media (max-width: 480px) {
-        @include title-s;
-      }
     }
-  }
-
-  @media (max-width: 480px) {
-    justify-content: start;
   }
 }
