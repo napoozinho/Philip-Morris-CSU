@@ -1,0 +1,230 @@
+.body-mecanica {
+  @include flex(column, start, center, false);
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+
+  padding: 24px 0;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background-image: url('./../images/landing/bkg_2.jpg'), linear-gradient(145deg, rgba(217,19,94,1) 0%, rgba(33,0,21,1) 27%, rgba(0,0,20,1) 40%, rgba(1,0,78,1) 67%, rgba(0,10,69,1) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .container {
+    @include flex(column, start, center, false);
+    position: relative;
+
+    max-width: 1440px;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+
+    padding: 0 16px;
+
+
+    header {
+      position: relative;
+
+      width: 100%;
+      max-width: 700px;
+
+      margin: 60px 0;
+      padding-bottom: 140px;
+
+      text-align: center;
+
+      h1 {
+        @include ff-ombudsman;
+        @include title-l;
+
+        margin-bottom: 10px;
+
+        color: $white;
+
+        span {
+          @include title-l;
+          text-shadow: 0 0 0 transparent;
+          transition: text-shadow 0.3s ease-in-out;
+
+          &:hover {
+            text-shadow: 0 5px 15px $blue-500;
+            cursor: default;
+          }
+        }
+      }
+
+      .line {
+        height: 1px;
+        width: 100%;
+        max-width: 500px;
+
+        margin: auto;
+        margin-bottom: 30px;
+
+        background-color: rgba(255, 255, 255, 0.2);
+
+        &.second {
+          max-width: 200px;
+        }
+      }
+
+      h2 {
+        @include ff-cond;
+        @include title-m;
+
+        margin-bottom: 60px;
+
+        color: rgba(255, 255, 255, 0.9);
+
+        span {
+          color: $blue-400;
+
+          transition: color 0.3s ease-in-out;
+
+          &:hover {
+            color: $blue-500;
+            cursor: default;
+          }
+        }
+      }
+
+      h3 {
+        @include ff-mozza;
+        @include title-xl;
+
+        margin-bottom: 16px;
+
+        color: $white;
+      }
+
+      p {
+        @include ff-cond;
+        @include body-xl;
+
+        color: rgba(255, 255, 255, 0.9);
+
+        span {
+          color: $white;
+          font-weight: bold;
+          letter-spacing: 0.03em;
+        }
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          span {
+            @include title-m;
+          }
+        }
+      }
+      @media (max-width: 480px) {
+        h1 {
+          @include title-m;
+          span {
+            @include title-s;
+          }
+        }
+        h2 {
+          @include title-s;
+        }
+      }
+
+
+      form {
+        margin-top: 40px;
+        button {
+          background-color: $red-500;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .circle-led {
+    position: absolute;
+    z-index: -1;
+    top: -230px;
+    left: 1100px;
+
+    width: 700px;
+
+    opacity: 0.2;
+
+    &.mid {
+      top: 700px;
+      left: -300px;
+
+      width: 900px;
+    }
+
+    @media (min-width: 1400px) and (max-width: 1920px) {
+      top: -230px;
+      left: 1500px;
+
+      &.mid {
+        top: 700px;
+        left: -700px;
+      }
+    }
+
+    @media (min-width: 1025px) and (max-width: 1399px) {
+      top: -230px;
+      left: 900px;
+
+      &.mid {
+        top: 700px;
+        left: -700px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      top: -230px;
+      left: 600px;
+
+      &.mid {
+        top: 700px;
+        left: -700px;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+      top: -230px;
+      left: 300px;
+
+      &.mid {
+        top: 1300px;
+        left: -700px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      top: -230px;
+      left: 100px;
+
+      &.mid {
+        top: 1600px;
+        left: -700px;
+      }
+    }
+
+    animation: beat 4s ease-in-out infinite;
+    @keyframes beat {
+      0% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        opacity: 0.1;
+      }
+    }
+  }
+}
