@@ -20,8 +20,20 @@
     max-width: 740px;
 
     padding: 24px;
+    padding-bottom: 80px;
 
     text-align: center;
+
+    img {
+      width: 100%;
+      max-width: 200px;
+
+      margin-bottom: 0;
+
+      @media (max-width: 480px) {
+        max-width: 100px;
+      }
+    }
 
     h1 {
       @include ff-ombudsman;
@@ -31,8 +43,16 @@
 
       color: $white;
 
+      span {
+        @include title-l;
+
+        @media (max-width: 480px) {
+          @include title-m;
+        }
+      }
+
       @media (max-width: 480px) {
-        @include title-m;
+        @include title-l;
       }
     }
 

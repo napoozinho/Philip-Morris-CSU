@@ -285,7 +285,15 @@ input, select {
     width: 100%;
     max-width: 740px;
     padding: 24px;
+    padding-bottom: 80px;
     text-align: center; }
+    .body-landing header img {
+      width: 100%;
+      max-width: 200px;
+      margin-bottom: 0; }
+      @media (max-width: 480px) {
+        .body-landing header img {
+          max-width: 100px; } }
     .body-landing header h1 {
       font-family: "Ombudsman";
       font-style: normal;
@@ -295,10 +303,17 @@ input, select {
       line-height: 60px;
       margin-bottom: 40px;
       color: white; }
+      .body-landing header h1 span {
+        font-size: 48px;
+        line-height: 48px; }
+        @media (max-width: 480px) {
+          .body-landing header h1 span {
+            font-size: 36px;
+            line-height: 46px; } }
       @media (max-width: 480px) {
         .body-landing header h1 {
-          font-size: 36px;
-          line-height: 46px; } }
+          font-size: 48px;
+          line-height: 48px; } }
     .body-landing header button {
       background-color: #cd0f57;
       color: white; }
